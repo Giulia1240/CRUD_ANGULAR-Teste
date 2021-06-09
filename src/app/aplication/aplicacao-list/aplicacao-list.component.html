@@ -1,0 +1,69 @@
+<!--Filtro-->
+
+<div class="container-fluid d-flex justify-content-center align-content-center mt-5">
+    <div class="w-100 h-50">
+
+        <div>
+            <form [formGroup]="filtroform" class="d-flex" (ngSubmit)="aplicarFiltro()">
+                <p class="mr-2">Filtrar por:</p>
+
+                <select formControlName="codigoAplicacao" class="form-control w-25 mr-4">
+                    <option class="mr-4" value="">Aplicacao</option>
+                    <option *ngFor="let item of lista" [value]="item.codigoDominioConteudo">{{item.descricaoDominioConteudo}}</option>
+                    </select>
+
+                <p class="mr-1 w-30" for="codigoDescricaoRetorno"> Nome Retorno: </p>
+                <input class="form-control mr-1 w-25 " type="text" id="codigoDescricaoRetorno" formControlName="codigoDescricaoRetorno" placeholder="Codigo">
+
+                <p class="mr-1 w-30" for="nomeDescricaoRetorno"> Nome Retorno: </p>
+                <input class="form-control mr-2" type="text" id="nomeDescricaoRetorno" formControlName="nomeDescricaoRetorno" placeholder="Nome Retorno">
+
+                <button type="submit" class="search btn btn-outline-info ">Pesquisar</button>
+
+            </form>
+        </div>
+
+        <!--Tabela-->
+        <table class="table table-info ">
+            <thead class="text-center mr-3">
+                <tr>
+                    <th scope="col-sm">Aplicação</th>
+                    <th scope="col-sm">Código</th>
+                    <th scope="col-sm">Nome Retorno</th>
+                    <th class="coluna" scope="col-sm">Editar</th>
+                </tr>
+            </thead>
+
+            <tbody class="table-secondary">
+                <tr *ngFor="let item of aplicacoes">
+
+                    <td class="text-center float-lg-none">
+                        {{item.codigoAplicacao}}
+                    </td>
+                    <td class="text-center float-lg-none">
+                        {{item.codigoDescricaoRetorno}}
+                    </td>
+                    <td class="mr-4">
+                        {{item.nomeDescricaoRetorno}}
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-outline-info float-right mr-2 " [routerLink]="[ '/aplicacao-update',item.identificadorDescricaoRetorno] ">Atualizar
+                            </button>
+                        <button type="button" class=" btn btn-outline-danger float-right mr-4 " [routerLink]="[ '/aplicacao-delete',item.identificadorDescricaoRetorno] ">Deletar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row ">
+            <div class="col-xs-12 col-12 ">
+                <pagination [totalItems]="totalItems " [itemsPerPage]="perPage" (pageChanged)="pageChanged($event) "></pagination>
+            </div>
+        </div>
+
+
+        <!-- <button type="submit " (click)="pageChanged() " class="btn btn-info ">next</button> -->
+    </div>
+</div>

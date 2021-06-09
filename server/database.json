@@ -1,0 +1,45 @@
+{
+    "aplicacao": [
+
+        {
+            "indentificadorDescricaoRetorno ": 1,
+            "codigoAplicacao ": "FGTS Retorno Caixa Portal Adm ",
+            "codigoDescricaoRetorno ": "9995",
+            "nomeDescricaoRetorno": "TESTE",
+            "mensagemDescricaoRetorno ": "TESTE"
+
+        },
+
+        {
+            "indentificadorDescricaoRetorno ": 2,
+            "codigoAplicacao ": "FGTS Retorno Caixa Portal Adm ",
+            "codigoDescricaoRetorno ": "9996",
+            "nomeDescricaoRetorno": "TESTE",
+            "mensagemDescricaoRetorno ": "TESTE"
+        },
+
+        {
+            "indentificadorRetorno ": 3,
+            "codigoAplicacao ": "FGTS Retorno Caixa Portal Adm ",
+            "codigoRetorno ": "024",
+            "nomeRetorno": "Numero da conta FGTS alterado",
+            "mensagemRetorno ": "TESTE"
+        },
+
+        {
+            "indentificadorRetorno ": 4,
+            "codigoAplicacao ": "FGTS Retorno Caixa Portal Adm ",
+            "codigoRetorno ": "009",
+            "nomeRetorno": "codigo da conta FGTS do empregado",
+            "mensagemRetorno ": "TESTE"
+        },
+
+        {
+            "indentificadorDescricaoRetorno ": 5,
+            "codigoAplicacao ": "FGTS Retorno Caixa Portal Adm ",
+            "codigoDescricaoRetorno ": "027",
+            "nomeDescricaoRetorno": "Conta Bloqueada",
+            "mensagemDescricaoRetorno ": "TESTE"
+        }
+    ]
+}

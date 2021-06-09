@@ -1,0 +1,39 @@
+<div class="register-form">
+    <form [formGroup]="form">
+
+        <div class="form-group">
+
+            <select formControlName="codigoAplicacao" class="form-control w-25 mr-4" [ngClass]="{ 'is-invalid': submitted && form.controls.codigoAplicacao.errors}">
+            <option class="mr-4" value="">Aplicacao*</option>
+            <option *ngFor="let item of lista" [value]="item.codigoDominioConteudo">{{item.descricaoDominioConteudo}}</option>
+            <div *ngIf="form.controls.codigoAplicacao.errors?.required" class="invalid-feedback">
+            </div>
+        </select>
+        </div>
+
+        <div class="form-group">
+            <label>Codigo* </label>
+            <input type="text" formControlName="codigoDescricaoRetorno" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.controls.codigoDescricaoRetorno.errors }" />
+            <div *ngIf="form.controls.codigoDescricaoRetorno.errors?.required" class="invalid-feedback"></div>
+        </div>
+
+
+        <div class="form-group">
+            <label>Nome Retorno* </label>
+            <input type="text" formControlName="nomeDescricaoRetorno" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.controls.nomeDescricaoRetorno.errors }" />
+            <div *ngIf="submitted && form.controls.nomeDescricaoRetorno.errors?.required" class="invalid-feedback">
+                <div *ngIf="form.controls.nomeDescricaoRetorno.errors?.required"> O preenchimento do campo "Nome Retorno" é obrigatório</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Texto Retorno </label>
+            <input type="text-area" formControlName="mensagemDescricaoRetorno" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" (click)="updateAplicacao()" class="btn btn-outline-danger mr-2">Atualizar</button>
+            <button type="button" (click)="voltarParaLista()" class="btn btn-outline-info mr-2"> Cancelar</button>
+        </div>
+    </form>
+</div>

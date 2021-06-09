@@ -1,0 +1,47 @@
+<mat-card class="mat-elevation-z4">
+
+    <div class="register-form">
+
+        <form [formGroup]="form" #info="ngForm" novalidate>
+
+            <div class="form-group">
+
+                <select formControlName="codigoAplicacao" class="form-control w-25 mr-4" [ngClass]="{ 'is-invalid': submitted && form.controls.codigoAplicacao.errors}">
+                    <option class="mr-4" value="">Aplicacao*</option>
+                    <option *ngFor="let item of lista" [value]="item.codigoDominioConteudo">{{item.descricaoDominioConteudo}}</option>
+                    <div *ngIf="form.controls.codigoAplicacao.errors!.required" class="invalid-feedback">
+                    </div>
+
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Codigo* </label>
+                <input type="text" formControlName="codigoDescricaoRetorno" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.controls.codigoDescricaoRetorno.errors}" />
+                <div *ngIf="form.controls.codigoDescricaoRetorno.errors!.required" class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Nome Retorno* </label>
+                <input type="text" formControlName="nomeDescricaoRetorno" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.controls.nomeDescricaoRetorno.errors }" />
+                <div *ngIf="form.controls.nomeDescricaoRetorno.errors!.required" class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Texto Retorno </label>
+                <input type="text-area" formControlName="mensagemDescricaoRetorno" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.controls.mensagemDescricaoRetorno.errors }" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" (click)="saveAplicacao()" class="btn btn-outline-danger mr-2" [routerLink]="'/aplicacao'" [disabled]="form.invalid || form.valid">Salvar</button>
+                <button type="button" class="btn btn-outline-info mr-2" [routerLink]="['/aplicacao']"> Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</mat-card>
