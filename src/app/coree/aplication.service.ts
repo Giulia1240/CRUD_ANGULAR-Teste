@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AplicacaoService {
+export class AplicationService {
 
   private REST_API_SERVER = "https://app-front-week3-api.herokuapp.com/";
   private headers!:HttpHeaders;

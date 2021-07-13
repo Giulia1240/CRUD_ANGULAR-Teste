@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AplicacaoService } from 'src/app/core/aplicacao.service';
+import { AplicationService } from 'src/app/coree/aplication.service';
 import { Aplicacao, AplicacaoOpcao, ComboBoxResposta } from 'src/app/shared/model/aplicacao';
 
 @Component({
@@ -23,7 +24,7 @@ export class AplicacaoUpdateComponent implements OnInit {
     }
 
     //actived router é utilizado para rota dentro da mesma janela
-    constructor(private aplicacaoService:AplicacaoService,private formBuilder: FormBuilder, private activatedRouter:ActivatedRoute,private router:Router){}
+    constructor(private aplicacaoService:AplicationService,private formBuilder: FormBuilder, private activatedRouter:ActivatedRoute,private router:Router){}
 
     ngOnInit(): void {
 
